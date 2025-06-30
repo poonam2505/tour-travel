@@ -1,0 +1,179 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    max-width: 700px;
+    width: 100%;
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1s ease-in-out;
+}
+
+.row {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+h4 {
+    font-size: 1.2rem;
+    color: #666;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+/* Contact Info Section */
+.contact-info {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.contact-info p {
+    font-size: 1rem;
+    color: #333;
+    margin: 8px 0;
+}
+
+.contact-info p strong {
+    color: #6c63ff;
+    font-weight: 600;
+}
+
+/* Input Container */
+.input-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.styled-input {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.styled-input.wide {
+    width: 100%;
+}
+
+.styled-input input,
+.styled-input textarea {
+    width: 100%;
+    padding: 15px 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #333;
+    background: #f9f9f9;
+    transition: all 0.3s ease;
+}
+
+.styled-input textarea {
+    height: 120px;
+    resize: none;
+}
+
+.styled-input input:focus,
+.styled-input textarea:focus {
+    outline: none;
+    border-color: #6c63ff;
+    background: #fff;
+    box-shadow: 0 0 8px rgba(108, 99, 255, 0.3);
+}
+
+.styled-input label {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    font-size: 1rem;
+    color: #999;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.styled-input input:focus + label,
+.styled-input input:not(:placeholder-shown) + label,
+.styled-input textarea:focus + label,
+.styled-input textarea:not(:placeholder-shown) + label {
+    top: -10px;
+    left: 15px;
+    font-size: 0.8rem;
+    color: #6c63ff;
+    background: #fff;
+    padding: 0 5px;
+}
+
+/* Submit Button */
+.submit-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background: #6c63ff;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    width: 100%;
+}
+
+.submit-btn:hover {
+    background: #5a52cc;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(108, 99, 255, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .styled-input {
+        width: 100% !important;
+    }
+
+    .styled-input[style*="float:right"] {
+        float: none !important;
+    }
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

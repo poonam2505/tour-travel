@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Book Your Manali Trip</title>
+  <style>
+    body { font-family: Arial, sans-serif; background-color: #f2f2f2; padding: 30px; }
+    h1 { text-align: center; color: #333; }
+    form {
+      max-width: 500px; margin: 0 auto; background: #fff;
+      padding: 30px; border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    label { display: block; margin-top: 15px; font-weight: bold; }
+    input, select {
+      width: 100%; padding: 10px; margin-top: 5px;
+      border-radius: 5px; border: 1px solid #ccc;
+    }
+    button {
+      margin-top: 20px; width: 100%; padding: 12px;
+      background-color: #4CAF50; color: white;
+      border: none; font-size: 16px; border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover { background-color: #45a049; }
+  </style>
+</head>
+<body>
+
+<h1>Book Your Trip to Manali</h1>
+
+<form id="bookingForm">
+  <label for="name">Full Name:</label>
+  <input type="text" id="name" required>
+
+  <label for="email">Email Address:</label>
+  <input type="email" id="email" required>
+
+  <label for="phone">Phone Number:</label>
+  <input type="tel" id="phone" required>
+
+  <label for="date">Travel Date:</label>
+  <input type="date" id="date" required>
+
+  <label for="persons">Number of Persons:</label>
+  <select id="persons">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3-5">3-5</option>
+    <option value="5+">5+</option>
+  </select>
+
+  <button type="submit">Submit Booking</button>
+</form>
+
+<script>
+  const form = document.getElementById("bookingForm");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const booking = {
+      name: document.getElementById("name").value,
+      email: document.getElementById("email").value,
+      phone: document.getElementById("phone").value,
+      date: document.getElementById("date").value,
+      persons: document.getElementById("persons").value
+    };
+
+    // Get existing bookings
+    let bookings = JSON.parse(localStorage.getItem("allBookings")) || [];
+
+    // Add the new booking
+    bookings.push(booking);
+
+    // Save back to localStorage
+    localStorage.setItem("allBookings", JSON.stringify(bookings));
+
+    // Redirect to bookings page
+    window.location.href = "bookings.html";
+  });
+</script>
+
+</body>
+</html>
